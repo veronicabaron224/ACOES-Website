@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers Accreditation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Main Menu</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/supp_accred_page">Suppliers Accreditation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checklist Page -->
+    <div class="container mt-5">
+        <form role="form" action="/form/submitted" method="POST" enctype="multipart/form-data" id="suppliers_accreditation_form">
+            <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN"/>
+            <h3>Suppliers Accreditation</h3>
+            <br/>
+            <label>Documentation Requirements:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">
+                    <a href="/sis_form_page">Supplier Information Sheet (Form No. 1)</a>
+                </span>
+                <input type="file" name="sis" id="sis" class="form-control" required="required"/>
+            </div>
+            <div class="form-group">
+                <ol>
+                    <li>Company Name</li>
+                    <li>Company Product/Services/Type (general contractor, etc.)</li>
+                    <li>Business type (corporation, etc.)</li>
+                    <li>TIN</li>
+                    <li>Business Address</li>
+                    <li>E-mail Address / Website</li>
+                    <li>Contact Person (name, position, contact numbers, e-mail add)</li>
+                    <li>Disclosure</li>
+                </ol>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Company Profile</span>
+                <input type="file" name="company_profile" id="company_profile" class="form-control" required="required"/>
+            </div>
+            <div class="form-group">
+                <ol>
+                    <li>List of clients and accomplished projects</li>
+                    <li>Complete product list</li>
+                    <li>Updated price list</li>
+                    <li>Affiliates/partner firm</li>
+                    <li>Certificate of accreditation with other suppliers/firms</li>
+                    <li>Copy of served Purchase orders issued by other customers - major projects</li>
+                    <li>Certificate from other customers</li>
+                </ol>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Business Permit</span>
+                <input type="file" name="bus_perm" id="bus_perm" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">SEC or DTI Registration and Articles of Incorporation</span>
+                <input type="file" name="aoi" id="aoi" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">BIR Registration/Certificate of Registration</span>
+                <input type="file" name="cor" id="cor" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">2 Years Audited Financial Statement</span>
+                <input type="file" name="fin_state" id="fin_state" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">SSS and Dole Certification</span>
+                <input type="file" name="sss_dole" id="sss_dole" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">PCAB License, if any</span>
+                <input type="file" name="pcab" id="pcab" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">List of production machineries and delivery equipment</span>
+                <input type="file" name="equip" id="equip" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">List of manpower</span>
+                <input type="file" name="manpower" id="manpower" class="form-control" required="required"/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Affiliated financial institution</span>
+                <input type="file" name="affil_inst" id="affil_inst" class="form-control" required="required"/>
+            </div>
+            <br/>
+            <div class="clearfix oe_login_buttons">
+                <button type="submit" class="btn btn-primary pull-left">Submit</button>
+            </div>
+            <br/>
+            <br/>
+        </form>
+    </div>
+
+    <!-- Confirmation Page -->
+    <div class="container mt-5">
+        <div id="confirmation" class="d-none">
+            <br/>
+            <h1>Submission successful!</h1>
+            <div class="alert alert-success" role="alert">Your documents have been submitted successfully.</div>
+            <form action="/my">
+                <button type="submit" class="btn btn-primary">Return</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // This script simulates the form submission and displays the confirmation message.
+        document.getElementById('suppliers_accreditation_form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('confirmation').classList.remove('d-none');
+        });
+    </script>
+
+</body>
+</html>
